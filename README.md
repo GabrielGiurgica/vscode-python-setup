@@ -48,7 +48,10 @@ The VSCode workspace configuration file is saved in `.vscode/settings.json`. It 
             "source.organizeImports": "explicit"
         },
     },
-    "mypy-type-checker.cwd": "${nearestConfig}"
+    // Uncomment this configuration if you have a monorepo project, and
+    // each application/library within the project has its own settings
+    // for mypy.
+    // "mypy-type-checker.cwd": "${nearestConfig}"
 }
 ```
 
@@ -85,5 +88,5 @@ max-doc-length = 72
 [tool.mypy]
 python_version = "3.8"
 warn_return_any = true
-
+disallow_untyped_defs=true
 ```
